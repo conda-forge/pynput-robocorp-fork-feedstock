@@ -1,7 +1,6 @@
 {% set name = "pynput-robocorp-fork" %}
 {% set version = "2.0.0" %}
 
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -11,7 +10,7 @@ source:
   sha256: 3d748e8c049b647ca2b93841d835d3339e47dd9760eabacf0cf7f3d4a8effad2
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -24,20 +23,18 @@ requirements:
   run:
     - enum34  # [py==27]
     # pyobjc-framework versions need to match
-    - pyobjc-framework-quartz ==5.3  # [osx]
-    - pyobjc-framework-cocoa ==5.3  # [osx]
+    - pyobjc-framework-quartz >=6.0,<7.0  # [osx]
+    - pyobjc-framework-cocoa >=6.0,<7.0  # [osx]
+    - pyobjc-core >=6.0,<7.0  # [osx]
     - python
-    - python-xlib >=0.17
+    - python-xlib >=0.17  # [linux]
     - six
 
 test:
-  # imports:
-    # - pynput_robocorp
-    # - pynput_robocorp._util
+  imports:
+    - pynput_robocorp  # [not linux]
   commands:
-    # Won't work until conda-forge has pyobjc >= 6
-    # - pip check
-    
+    - pip check  # [not osx]
   requires:
     - pip
 
