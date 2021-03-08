@@ -23,9 +23,9 @@ requirements:
   run:
     - enum34  # [py==27]
     # pyobjc-framework versions need to match
-    - pyobjc-framework-quartz ==6.2  # [osx]
-    - pyobjc-framework-cocoa ==6.2  # [osx]
-    - pyobjc-core ==6.2  # [osx]
+    - pyobjc-framework-quartz >=6.0,<7.0  # [osx]
+    - pyobjc-framework-cocoa >=6.0,<7.0  # [osx]
+    - pyobjc-core >=6.0,<7.0  # [osx]
     - python
     - python-xlib >=0.17  # [linux]
     - six
@@ -34,7 +34,7 @@ test:
   imports:
     - pynput_robocorp  # [not linux]
   commands:
-    - pip check
+    - pip check  # [not osx]
   requires:
     - pip
 
