@@ -1,5 +1,5 @@
 {% set name = "pynput-robocorp-fork" %}
-{% set version = "2.0.0" %}
+{% set version = "4.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pynput-robocorp-fork-{{ version }}.tar.gz
-  sha256: 3d748e8c049b647ca2b93841d835d3339e47dd9760eabacf0cf7f3d4a8effad2
+  sha256: 92131856267268d57ca2d7861aa692eecefa0827408940091321b14606d3c04c
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -41,7 +41,7 @@ test:
 about:
   home: https://github.com/robocorp/pynput
   summary: Monitor and control user input devices
-  license:  LGPL-3.0-or-later
+  license: LGPL-3.0-or-later
   license_file: COPYING
 
 extra:
