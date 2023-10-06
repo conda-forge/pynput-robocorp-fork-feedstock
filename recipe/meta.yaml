@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -29,8 +29,8 @@ requirements:
     - pyobjc-framework-quartz <10.0,>=8.0  # [osx]
     - pyobjc-core <10.0,>=8.0  # [osx]
     - __linux  # [linux]
-    - __osx    # [osx]
-    - __win    # [win]
+    - __osx  # [osx]
+    - __win  # [win]
 
 test:
   imports:
